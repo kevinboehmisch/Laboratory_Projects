@@ -3,13 +3,13 @@ Explore the diverse array of Laboratory Projects from the University of Applied 
 These projects represent a culmination of academic endeavors within the Software Engineering program, highlighting practical applications and technical exposure.
 
 ## Notable Aspects:
-###Technological Landscape: 
+### Technological Landscape: 
 - The repository delves into a broad technological landscape, encompassing languages such as C++, Linux Bash scripting, C, and Python, showcasing a breadth of programming language proficiency.
 
-###Adaptability: 
+### Adaptability: 
 - Emphasizing adaptability, these projects demonstrate the application of theoretical knowledge in dynamic, real-world scenarios—an essential quality for effective software engineering.
 
-###Problem-Solving Prowess: 
+### Problem-Solving Prowess: 
 -Each project encapsulates instances of effective problem-solving, providing insight into the analytical and critical thinking skills developed during the course of these laboratory tasks.
 
 
