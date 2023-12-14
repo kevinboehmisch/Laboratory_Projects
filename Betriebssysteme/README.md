@@ -7,19 +7,19 @@ To use the script, run the following command in your terminal:
 
 - ./email_analysis.sh [-h|--help] | [-e|--email] | [-c|--company] + [filename]
 
-## Options
+### Options
 - -h|--help: Display help information and exit.
 - -e|--email: Extract and display a sorted list of unique email addresses found in the specified file.
 - -c|--company: Extract and display email providers along with the number of occurrences in the specified file.
   
-## How It Works
+### How It Works
 The script parses the provided email file and identifies sender information, allowing users to understand the distribution of emails. It includes functionality to:
 
-## Extract and Display Email Addresses
+### Extract and Display Email Addresses
 - ./email_analysis.sh -e emails.txt
 This command outputs a sorted list of unique email addresses found in the specified emails.txt file.
 
-## Extract and Display Email Providers
+### Extract and Display Email Providers
 - ./email_analysis.sh -c emails.txt
 This command outputs a list of email providers along with the number of occurrences found in the specified emails.txt file.
 
