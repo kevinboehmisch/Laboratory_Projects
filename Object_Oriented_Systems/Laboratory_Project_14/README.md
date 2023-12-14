@@ -13,3 +13,7 @@ Ergänzen Sie die Programmteile an den Stellen, die mit /* HIER */ gekennzeichne
 Nutzen Sie Module um die Dateien zu integrieren.
 
 Es wird die folgende Ausgabe erwartet.
+
+# Hinweis:
+Das Programm muss in Visual Studio ausgeführt werden, da nur Visual Studio .ixx-Dateien unterstützt.
+Visual Studio Code unterstützt diese nicht.
