@@ -1,4 +1,4 @@
-# Email Analysis Script
+# **Email Analysis Script**
 The email_analysis.sh script is a versatile tool designed for parsing email files and providing insights into sender activities and the prevalence of email service providers. 
 This script is particularly useful for analyzing datasets to identify patterns, such as the most prolific senders and frequently occurring email providers.
 
@@ -21,7 +21,7 @@ This command outputs a sorted list of unique email addresses found in the specif
 
 ### Extract and Display Email Providers
 - ./email_analysis.sh -c emails.txt
-This command outputs a list of email providers along with the number of occurrences found in the specified emails.txt file.
+This command outputs '''a list''' ´of´ 'email' providers along with the number of occurrences found in the specified emails.txt file.
 
 ## Notes
 If no option is specified, the script defaults to -e (email extraction) to provide a comprehensive list of unique email addresses.
