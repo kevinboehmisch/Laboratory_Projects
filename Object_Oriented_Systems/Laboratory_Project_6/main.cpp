@@ -134,4 +134,3 @@ int main(int argc, char *argv[])
     delete p_stud_mustermann;
     return 0;
 }
-
