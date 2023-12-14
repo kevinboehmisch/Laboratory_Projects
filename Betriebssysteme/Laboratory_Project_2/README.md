@@ -14,8 +14,6 @@ The module employs a workqueue mechanism to handle latency monitoring in the bac
 ### Latency Measurement
 The work_handler function captures and displays latency attributes, including backtrace, count, time, and maximum latency.
 
-- Backtrace       Count          Time           Max
-- %pX             %10.u          %10.lu        %10.lu
 ### Initialization
 During initialization, the module sets up the workqueue, schedules the initial work execution, and validates the provided delay parameter.
 
