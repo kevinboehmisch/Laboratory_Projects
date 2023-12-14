@@ -10,7 +10,7 @@ These projects represent a culmination of academic endeavors within the Software
 - Emphasizing adaptability, these projects demonstrate the application of theoretical knowledge in dynamic, real-world scenarios—an essential quality for effective software engineering.
 
 ### Problem-Solving Prowess: 
--Each project encapsulates instances of effective problem-solving, providing insight into the analytical and critical thinking skills developed during the course of these laboratory tasks.
+- Each project encapsulates instances of effective problem-solving, providing insight into the analytical and critical thinking skills developed during the course of these laboratory tasks.
 
 
 
