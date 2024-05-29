@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    --title-color: #b0c3ab;
+    --second-color: #818181;
+    --third-color: #c7c7c7;
+
+    --shadowsize: 3px;
+    --shadowcolor: #3d3d3d;
+    --highlightcolor: #ffffff;
+}
+
+html, body {
+    display: block;
+    height: 100%;
+}
+
+.container {
+    width: min(55vw, 360vh);
+    height: min(100vh, 360vw);
+    max-width: 400px;         /* Maximale Breite des Containers */
+    max-height: 720px; 
+    background-color: orange;
+    margin: 0 auto;
+    border: 2px;
+}
+
+header {
+    background-color: var(--title-color);
+    height: 20%;
+    padding: 0px 20px;
+    background-image: none;
+}
+
+@media (min-width: 480px) {
+    header {
+        background-image: url('images/minesweeper_background1.png');  
+        background-size: cover; 
+        background-repeat: no-repeat;  
+        background-position: center;  
+    }
+}
+
+#playfield {
+    background-color: var(--second-color);
+    width: 100%; 
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 2px;
+}
+
+#buttons {
+    background-color: var(--title-color);
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttons button {
+    width: 30%; 
+    height: 40%;             
+    text-align: center; 
+    margin: 0 10px;
+    font-size: 18px;
+    border: 1px solid #3d3d3d;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--third-color);
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 20px;
+}
+
+.cell {
+    border: var(--shadowsize) solid transparent;
+    background-color: var(--third-color);
+    box-sizing: border-box;
+    width: calc(100% /9.4) ;
+    height: calc(100% /9.4) ;
+}
+
+.covered_class {
+    border-top: var(--shadowsize) solid var(--highlightcolor);
+    border-left: var(--shadowsize) solid var(--highlightcolor);
+    border-bottom: var(--shadowsize) solid var(--shadowcolor);
+    border-right: var(--shadowsize) solid var(--shadowcolor);
+}
+
+.cell_symbol {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+}
+
+.cell_symbol_1 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_2 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 11%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_3 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 22%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_4 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 33%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_5 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 44%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_6 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 55%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_7 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 66%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_8 {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 77%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_f {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 88%;
+    background-repeat: no-repeat;
+}
+
+.cell_symbol_m {
+    background-image: url('images/symbols.svg');
+    background-size: 1000% 100%;
+    background-position: 99.9%;
+    background-repeat: no-repeat;
+}
