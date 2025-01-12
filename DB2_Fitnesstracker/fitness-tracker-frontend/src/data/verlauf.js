@@ -1,0 +1,245 @@
+export const trainingseinheiten = [
+    {
+      id: 1,
+      planName: "Push Day",
+      tag: "Samstag",
+      datum: "11 Jan. 2025",
+      dauer: "45 Minuten",
+      saetze: [
+        {
+          uebung: "Bankdrücken",
+          anzahl: 4,
+          durchschnittGewicht: 80,
+          durchschnittWiederholungen: 10,
+          details: [
+            { satzNummer: 1, wiederholungen: 10, gewicht: 80 },
+            { satzNummer: 2, wiederholungen: 10, gewicht: 80 },
+            { satzNummer: 3, wiederholungen: 8, gewicht: 75 },
+            { satzNummer: 4, wiederholungen: 6, gewicht: 70 },
+          ],
+        },
+        {
+          uebung: "Schulterdrücken",
+          anzahl: 3,
+          durchschnittGewicht: 50,
+          durchschnittWiederholungen: 12,
+          details: [
+            { satzNummer: 1, wiederholungen: 12, gewicht: 50 },
+            { satzNummer: 2, wiederholungen: 10, gewicht: 50 },
+            { satzNummer: 3, wiederholungen: 8, gewicht: 45 },
+          ],
+        },
+        {
+            uebung: "Kniebeugen",
+            anzahl: 4,
+            durchschnittGewicht: 100,
+            durchschnittWiederholungen: 8,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 100 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 100 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 95 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 90 },
+            ],
+          },
+          {
+            uebung: "Beinpresse",
+            anzahl: 4,
+            durchschnittGewicht: 120,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 120 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 120 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 115 },
+              { satzNummer: 4, wiederholungen: 8, gewicht: 110 },
+            ],
+          },
+          {
+            uebung: "Bankdrücken",
+            anzahl: 4,
+            durchschnittGewicht: 80,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 75 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 70 },
+            ],
+          },
+          {
+            uebung: "Schulterdrücken",
+            anzahl: 3,
+            durchschnittGewicht: 50,
+            durchschnittWiederholungen: 12,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 50 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 50 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 45 },
+            ],
+          },
+        // Weitere Übungen ...
+      ],
+    },
+    {
+      id: 2,
+      planName: "Pull Day",
+      tag: "Freitag",
+      datum: "10 Jan. 2025",
+      dauer: "50 Minuten",
+      saetze: [
+        {
+          uebung: "Klimmzüge",
+          anzahl: 5,
+          durchschnittGewicht: 0,
+          durchschnittWiederholungen: 8,
+          details: [
+            { satzNummer: 1, wiederholungen: 8, gewicht: 0 },
+            { satzNummer: 2, wiederholungen: 8, gewicht: 0 },
+            { satzNummer: 3, wiederholungen: 6, gewicht: 0 },
+            { satzNummer: 4, wiederholungen: 6, gewicht: 0 },
+            { satzNummer: 5, wiederholungen: 6, gewicht: 0 },
+          ],
+        },
+        {
+          uebung: "Rudern",
+          anzahl: 4,
+          durchschnittGewicht: 60,
+          durchschnittWiederholungen: 10,
+          details: [
+            { satzNummer: 1, wiederholungen: 10, gewicht: 60 },
+            { satzNummer: 2, wiederholungen: 10, gewicht: 60 },
+            { satzNummer: 3, wiederholungen: 8, gewicht: 55 },
+            { satzNummer: 4, wiederholungen: 8, gewicht: 55 },
+          ],
+        },
+        {
+            uebung: "Kniebeugen",
+            anzahl: 4,
+            durchschnittGewicht: 100,
+            durchschnittWiederholungen: 8,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 100 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 100 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 95 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 90 },
+            ],
+          },
+          {
+            uebung: "Beinpresse",
+            anzahl: 4,
+            durchschnittGewicht: 120,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 120 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 120 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 115 },
+              { satzNummer: 4, wiederholungen: 8, gewicht: 110 },
+            ],
+          },
+          {
+            uebung: "Bankdrücken",
+            anzahl: 4,
+            durchschnittGewicht: 80,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 75 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 70 },
+            ],
+          },
+          {
+            uebung: "Schulterdrücken",
+            anzahl: 3,
+            durchschnittGewicht: 50,
+            durchschnittWiederholungen: 12,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 50 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 50 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 45 },
+            ],
+          },
+        // Weitere Übungen ...
+      ],
+    },
+    {
+      id: 3,
+      planName: "Leg Day",
+      tag: "Montag",
+      datum: "8 Jan. 2025",
+      dauer: "60 Minuten",
+      saetze: [
+        {
+          uebung: "Kniebeugen",
+          anzahl: 4,
+          durchschnittGewicht: 100,
+          durchschnittWiederholungen: 8,
+          details: [
+            { satzNummer: 1, wiederholungen: 10, gewicht: 100 },
+            { satzNummer: 2, wiederholungen: 10, gewicht: 100 },
+            { satzNummer: 3, wiederholungen: 8, gewicht: 95 },
+            { satzNummer: 4, wiederholungen: 6, gewicht: 90 },
+          ],
+        },
+        {
+          uebung: "Beinpresse",
+          anzahl: 4,
+          durchschnittGewicht: 120,
+          durchschnittWiederholungen: 10,
+          details: [
+            { satzNummer: 1, wiederholungen: 12, gewicht: 120 },
+            { satzNummer: 2, wiederholungen: 10, gewicht: 120 },
+            { satzNummer: 3, wiederholungen: 8, gewicht: 115 },
+            { satzNummer: 4, wiederholungen: 8, gewicht: 110 },
+          ],
+        },
+        {
+            uebung: "Bankdrücken",
+            anzahl: 4,
+            durchschnittGewicht: 80,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 75 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 70 },
+            ],
+          },
+          {
+            uebung: "Schulterdrücken",
+            anzahl: 3,
+            durchschnittGewicht: 50,
+            durchschnittWiederholungen: 12,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 50 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 50 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 45 },
+            ],
+          },
+          {
+            uebung: "Bankdrücken",
+            anzahl: 4,
+            durchschnittGewicht: 80,
+            durchschnittWiederholungen: 10,
+            details: [
+              { satzNummer: 1, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 80 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 75 },
+              { satzNummer: 4, wiederholungen: 6, gewicht: 70 },
+            ],
+          },
+          {
+            uebung: "Schulterdrücken",
+            anzahl: 3,
+            durchschnittGewicht: 50,
+            durchschnittWiederholungen: 12,
+            details: [
+              { satzNummer: 1, wiederholungen: 12, gewicht: 50 },
+              { satzNummer: 2, wiederholungen: 10, gewicht: 50 },
+              { satzNummer: 3, wiederholungen: 8, gewicht: 45 },
+            ],
+          },
+        // Weitere Übungen ...
+      ],
+    },
+  ];
+  
