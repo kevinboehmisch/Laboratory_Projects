@@ -36,6 +36,7 @@ public ResponseEntity<List<WorkoutDetail>> getWorkoutDetailsByWorkoutID(@PathVar
         WorkoutDetail createdDetail = workoutDetailService.createWorkoutDetail(workoutDetail);
         return ResponseEntity.ok(createdDetail);
     }
+    // POST: Mehrere Neue WorkoutDetail erstellen
     @PostMapping("/batch")
     public ResponseEntity<List<WorkoutDetail>> createWorkoutDetails(@RequestBody List<WorkoutDetail> details) {
         List<WorkoutDetail> savedDetails = workoutDetailService.saveWorkoutDetails(details);

@@ -10,41 +10,47 @@ const WorkoutService = {
         const response = await axios.post(`${API_BASE_URL}/workoutDetails/batch`, details);
         return response.data; // Rückgabe der gespeicherten Details
     },
-  async getAllWorkoutsWithDetailsAndExercises() {
-    try {
-      // Workouts und Details abrufen
-      const workoutsResponse = await axios.get(`${API_BASE_URL}/workouts`);
-      const workouts = workoutsResponse.data;
-
-      // Übungen abrufen
-      const uebungenResponse = await axios.get(`${API_BASE_URL}/uebungen`);
-      const uebungen = uebungenResponse.data;
-
-      // Workouts mit Details und Übungen verknüpfen
-      const detailedWorkouts = await Promise.all(
-        workouts.map(async (workout) => {
-          const detailsResponse = await axios.get(
-            `${API_BASE_URL}/workoutDetails/${workout.workoutID}`
-          );
-          const details = detailsResponse.data.map((detail) => ({
-            ...detail,
-            uebungName:
-              uebungen.find((uebung) => uebung.uebungID === detail.uebungID)?.name || "Unbekannte Übung",
-          }));
-
-          return {
-            ...workout,
-            Details: details, // WorkoutDetails + Übungsnamen
-          };
-        })
-      );
-
-      return detailedWorkouts;
-    } catch (error) {
-      console.error("Fehler beim Laden der Workouts mit Details und Übungen:", error);
-      throw error;
+    async getAllWorkoutsWithDetails() {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/workouts/details`);
+        const flatWorkouts = response.data; // Daten aus der API-Antwort
+    
+        // Gruppiere die Workouts nach WorkoutID
+        const groupedWorkouts = flatWorkouts.reduce((acc, detail) => {
+          const workoutID = detail.WorkoutID;
+    
+          if (!acc[workoutID]) {
+            acc[workoutID] = {
+              WorkoutID: detail.WorkoutID,
+              Name: detail.WorkoutName,
+              Details: [], // Initialisiere leeres Array für Details
+            };
+          }
+    
+          acc[workoutID].Details.push({
+            UebungName: detail.UebungName,
+            SatzNummer: detail.SatzNummer,
+            Gewicht: detail.Gewicht,
+            Wiederholungen: detail.Wiederholungen,
+            Completed: detail.Completed,
+          });
+    
+          return acc;
+        }, {});
+    
+        // Konvertiere das Objekt zurück in ein Array
+        return Object.values(groupedWorkouts); // Gruppierte Workouts
+      } catch (error) {
+        console.error("Fehler beim Abrufen der Workouts mit Details:", error);
+        throw error;
+      }
     }
-  },
+    
 };
 
 export default WorkoutService;
+const flatWorkouts = await WorkoutService.getAllWorkoutsWithDetails(); // Flache Struktur laden
+console.log("Flache Workouts-Daten:", flatWorkouts);
+
+// Gruppiere die Daten nach WorkoutID
+

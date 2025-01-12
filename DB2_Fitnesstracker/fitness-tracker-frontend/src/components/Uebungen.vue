@@ -1,14 +1,32 @@
 <template>
   <div class="uebungen">
-    <div v-for="uebung in uebungen" :key="uebung.id" class="uebung-card" @click="openModal(uebung)">
-      <h3>{{ uebung.name }}</h3>
-      <p>{{ uebung.muskelgruppe }}</p>
+    <div
+      v-for="uebung in uebungen"
+      :key="uebung.UebungID"
+      class="uebung-card"
+      @click="openModal(uebung)"
+    >
+      <h3>{{ uebung.UebungName }}</h3>
+      <div class="details">
+        <p>Muskelgruppe: {{ uebung.Muskelgruppe }}</p>
+              
+      <p>Ø {{ (uebung.DurchschnittlichesGewicht || 0).toFixed(1) }} kg x</p>
+      <p>Ø {{ (uebung.DurchschnittlicheWiederholungen || 0).toFixed(1) }}</p>
+      </div>
+
     </div>
 
     <!-- Modal für Übungsdetails -->
-    <UebungenDetailModal v-if="selectedUebung" :uebung="selectedUebung" @save="handlesave" @close="closeModal" />
+    <UebungenDetailModal
+      v-if="selectedUebung"
+      :uebung="selectedUebung"
+      @save="handleSave"
+      @close="closeModal"
+    />
   </div>
 </template>
+
+
 
 <script>
 import UebungenDetailModal from './UebungenDetailModal.vue';
@@ -43,12 +61,14 @@ export default {
   },
   methods: {
     async fetchUebungen() {
-      try {
-        this.uebungen = await UebungService.getAllUebungen();
-      } catch (error) {
-        console.error("Fehler beim Abrufen der Übungen:", error);
-      }
-    },
+    try {
+      // Hole Übungen mit Durchschnittswerten
+      const uebungenWithAverages = await UebungService.getExercisesWithAverages();
+      this.uebungen = uebungenWithAverages;
+    } catch (error) {
+      console.error("Fehler beim Abrufen der Übungen:", error);
+    }
+  },
     openModal(uebung) {
       this.selectedUebung = uebung;
     },
@@ -105,4 +125,17 @@ export default {
   color: var(--text-secondary-color);
   font-size: 0.9rem;
 }
+
+.details{
+  display: flex; /* Aktiviert Flexbox */
+  justify-content: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin: 0;
+  padding-top: 10px;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+  gap: 10px; /* Optional: Abstand zwischen den Elementen */
+}
+
 </style>

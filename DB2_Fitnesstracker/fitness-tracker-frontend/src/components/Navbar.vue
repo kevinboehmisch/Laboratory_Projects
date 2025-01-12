@@ -3,7 +3,6 @@
       <div class="container">
         <span class="brand">Fitness Tracker</span>
         <ul class="nav-links">
-          <li><router-link to="/">Profil</router-link></li>
           <li><router-link to="/verlauf">Verlauf</router-link></li>
           <li><router-link to="/">Home</router-link></li>
           <li><router-link to="/uebungen">Übungen</router-link></li>

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/workouts")
@@ -29,5 +30,10 @@ public class WorkoutController {
     @PostMapping
     public ResponseEntity<Workout> createWorkout(@RequestBody Workout workout) {
         return new ResponseEntity<>(workoutService.saveWorkout(workout), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/details")
+    public ResponseEntity<List<Map<String, Object>>> getAllWorkoutsWithDetails() {
+        return ResponseEntity.ok(workoutService.getAllWorkoutsWithDetails());
     }
 }

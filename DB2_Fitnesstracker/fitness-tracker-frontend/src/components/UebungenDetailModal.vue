@@ -3,19 +3,24 @@
       <div class="modal">
         <div class="header">
           <button class="modal-button" @click="closeModal">x</button>
-          <h2>{{ uebung.name }}</h2>
+          <h2>{{ uebung.UebungName }}</h2>
         </div>
   
         <div class="info-row">
-          <span>Muskelgruppe: {{ uebung.muskelgruppe }}</span>
+          <span>Muskelgruppe: {{ uebung.Muskelgruppe }}</span>
         </div>
   
         <div class="modal-content">
           <h3>Beschreibung</h3>
           <p class="description-text">
-            {{ uebung.beschreibung }}
+            {{ uebung.Beschreibung }}
           </p>
-        </div>
+          <div class="durchschnittswerte">
+            <p>Ø Gewicht: {{ (uebung.DurchschnittlichesGewicht || 0).toFixed(1) }} kg</p>
+          <p>Ø Wiederholungen: {{ (uebung.DurchschnittlicheWiederholungen || 0).toFixed(1) }}</p>
+        
+          </div>
+         </div>
       </div>
     </div>
   </template>
@@ -112,5 +117,16 @@
     color: var(--text-primary-color);
     line-height: 1.5;
   }
+
+  .durchschnittswerte {
+  display: flex; /* Aktiviert Flexbox */
+  align-items: center; /* Elemente vertikal zentrieren */
+  margin: 0;
+  padding-left: 30px;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+  gap: 150px; /* Optional: Abstand zwischen den Elementen */
+}
+
   </style>
   

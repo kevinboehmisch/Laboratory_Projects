@@ -9,7 +9,7 @@ public class Uebung {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long uebungID;
+    private Integer uebungID;
 
     @Column(nullable = false, length = 100)
     private String name;
@@ -21,11 +21,11 @@ public class Uebung {
     private String beschreibung;
 
     // Getter und Setter
-    public Long getUebungID() {
+    public Integer getUebungID() {
         return uebungID;
     }
 
-    public void setUebungID(Long uebungID) {
+    public void setUebungID(Integer uebungID) {
         this.uebungID = uebungID;
     }
 

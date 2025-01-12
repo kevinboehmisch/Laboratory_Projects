@@ -1,7 +1,9 @@
 <template>
   <div class="home-view">
     <h1 class="header">Workout beginnen</h1>
-    <AddButton @click="openAddWorkoutModal">Workout hinzufügen</AddButton>
+    <div class="add-button-container">
+      <AddButton @click="openAddWorkoutModal">Workout hinzufügen</AddButton>
+    </div>
 
     <!-- Modal für neues Workout -->
     <AddWorkoutModal
@@ -51,8 +53,8 @@ export default {
   },
   async mounted() {
     try {
-      const detailedWorkouts = await WorkoutService.getAllWorkoutsWithDetailsAndExercises();
-      this.workouts = detailedWorkouts; // Workouts im State speichern
+      const detailedWorkouts = await WorkoutService.getAllWorkoutsWithDetails();
+      this.workouts = detailedWorkouts.reverse(); // Workouts im State speichern
       console.log("Geladene Workouts:", this.workouts); // Debugging
     } catch (error) {
       console.error("Fehler beim Laden der Workouts:", error);
@@ -101,4 +103,9 @@ export default {
   flex-direction: column;
   gap: 1rem;
 }
+.add-button-container {
+  display: flex; /* Flexbox aktivieren */
+  justify-content: center; /* Inhalt horizontal zentrieren */
+}
+
 </style>
