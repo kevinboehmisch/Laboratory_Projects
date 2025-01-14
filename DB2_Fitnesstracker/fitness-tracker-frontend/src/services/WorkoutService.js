@@ -52,5 +52,5 @@ export default WorkoutService;
 const flatWorkouts = await WorkoutService.getAllWorkoutsWithDetails(); // Flache Struktur laden
 console.log("Flache Workouts-Daten:", flatWorkouts);
 
-// Gruppiere die Daten nach WorkoutID
+
 
