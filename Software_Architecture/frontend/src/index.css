@@ -1,0 +1,306 @@
+/* Default Farben für den Light Mode */
+:root {
+  --background-color: #f5f5f5;
+  --text-color: #0f1419;
+  --post-background-color: #ffffff;
+  --post-border-color: #e6ecf0;
+  --button-bg-color: #1d9bf0;
+  --button-hover-bg-color: #1a8cd8;
+  --button-text-color: #ffffff;
+  --comment-hover-bg-color: #f8f8f8;
+  --logout-button-bg-color: #1d9bf0; /* Blau im Light Mode */
+  --logout-button-border-color: #1d9bf0;
+  --logout-button-text-color: #ffffff; /* Weißer Text */
+  --logout-button-hover-bg-color: #1a8cd8;
+}
+
+/* Dark Mode Farben */
+body.dark-mode {
+  --background-color: #181a1b;
+  --text-color: #d1d5d9;
+  --post-background-color: #242526;
+  --post-border-color: #3a3b3c;
+  --button-bg-color: #3a82f7;
+  --button-hover-bg-color: #306acb;
+  --button-text-color: #ffffff;
+  --comment-hover-bg-color: #2c2f31;
+  --logout-button-bg-color: #3a3b3c;
+  --logout-button-border-color: #3a82f7;
+  --logout-button-text-color: #ffffff;
+  --logout-button-hover-bg-color: #4a4d51;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  
+}
+
+header {
+  background-color: var(--post-background-color);
+  border-bottom: 1px solid var(--post-border-color);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header h1 {
+  padding-right: 70%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/* Container */
+.container {
+  display: flex;
+  margin: 0 auto;
+  width: 72%; /* Erhöhe die maximale Breite des Containers */
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Post- und Kommentar-Karten */
+.post, .comment {
+  background-color: var(--post-background-color);
+  border: 1px solid var(--post-border-color);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  max-width: 100%; /* Stellt sicher, dass Posts sich nicht begrenzen */
+  width: 100%; /* Post nimmt gesamte Breite des Containers ein */
+}
+
+.post {
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  
+}
+
+.post:hover {
+  background-color: var(--comment-hover-bg-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 900px;
+}
+
+.post-header img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-header .username {
+  font-weight: bold;
+  max-width: 900px;
+}
+
+.post-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  max-width: 900px;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  margin-top: 5px;
+  max-width: 900px;
+}
+
+/* Buttons */
+button, .vote-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-bg-color);
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .vote-button:hover {
+  background-color: var(--button-hover-bg-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Vote Buttons Styling */
+.vote-buttons {
+  display: flex;
+  flex-direction: row; /* Buttons horizontal anordnen */
+  justify-content: right; /* Zentrierung */
+  align-items: center;
+  gap: 20px; /* Abstand zwischen den Buttons */
+  margin-top: 15px;
+}
+
+.vote-button {
+  width: 50px; /* Runde Buttons */
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vote-count {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+/* Kommentar-Liste */
+.comment-list {
+  margin-top: 15px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Abstand zwischen Kommentaren */
+  width: 100%; /* Volle Breite des Containers */
+  box-sizing: border-box;
+}
+
+.comment {
+  background-color: var(--post-background-color);
+  border: 1px solid var(--post-border-color);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  width: 100%; /* Volle Breite */
+}
+
+.comment-textarea {
+  width: 100%;
+  border: 1px solid var(--post-border-color);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.comment-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-bg-color);
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* Breite des Buttons entspricht der Textarea */
+}
+
+.comment-button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Formular zentrieren */
+.post-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  text-align: center;
+}
+
+.post-form-container h1 {
+  margin-bottom: 20px;
+}
+
+.post-form {
+  background: var(--post-background-color);
+  border: 1px solid var(--post-border-color);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.post-form textarea {
+  width: 100%;
+  border: 1px solid var(--post-border-color);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  min-height: 100px;
+  background-color: var(--post-background-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Logout-Button Styling */
+.logout-button-container {
+  text-align: right;
+  padding: 10px 20px;
+}
+
+.logout-button {
+  background-color: var(--logout-button-bg-color);
+  color: var(--logout-button-text-color);
+  border: 1px solid var(--logout-button-border-color);
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--logout-button-hover-bg-color);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-bg-color);
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--button-hover-bg-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Erfolg- und Fehlermeldungen */
+.success-message {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}

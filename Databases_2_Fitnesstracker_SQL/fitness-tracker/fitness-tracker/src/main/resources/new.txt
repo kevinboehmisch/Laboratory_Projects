@@ -1,0 +1,27 @@
+app.http('sensor-data', {
+    methods: ['PATCH'],
+    authLevel: 'anonymous',
+    route: 'sensor/sensor-data',
+    handler: async (request, context) => {
+        const apiKeyError = validateApiKey(request, context);
+        if (apiKeyError) {
+            return apiKeyError;
+        }
+
+        const body = await request.json();
+        const result = await sensorService.updateSensorDataAndFetchInterval(body);
+        return httpResponses.success(result, 200);
+    },
+});
+
+
+# Intervall aus der Response auslesen
+if response.headers.get('Content-Type') == 'application/json':
+    response_json = response.json()
+    interval = response_json.get("interval", interval)
+
+# Wartezeit basierend auf dem neuen Intervall
+time.sleep(interval)
+
+
+
