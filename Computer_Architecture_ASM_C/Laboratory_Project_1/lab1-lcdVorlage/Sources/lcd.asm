@@ -217,6 +217,9 @@ msg_out:                  ; output the message character by character
 next:     ldaa 0,x        ; get character
           decb
           beq  wEnd       ; not more than 16 characters
+          cmpa #0         ; if NUL sign, fill rest up with spaces
+          beq pad
+          jsr  outputByte ; write character to LCD
           inx             ; continue with next character
           bra  next
 
@@ -224,6 +227,14 @@ next:     ldaa 0,x        ; get character
 wEnd:     pulx
           puld
           rts
+;if less than 16 signs, print space to make it left bound
+pad:                               
+          ldaa #' '              ; ASCII value for space
+          jsr  outputByte        ; print space on LCD
+          decb                   
+          cmpb #0                ; if counter reaches 0, print no spaces anymore
+          bne  pad               ; repeat until 16 signs reached
+          bra wEnd
 
 ;**************************************************************
 ; Public interface function: delay_10ms
